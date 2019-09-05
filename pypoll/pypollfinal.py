@@ -52,12 +52,6 @@ with open('election_data.txt', 'w') as text:
     text.write("---------------------------------------\n")
     for key, value in vpc_combined.items():
         text.write(key + ": " + str("{:.2%}".format(value / total_votes)) + " (" + str(value) + " votes)" + ")\n")
-    winner = max("vpc_combined, key=lambda key: vpc_combined[key] + \n")
+    winner = max(vpc_combined, key=lambda key: "vpc_combined[key] + \n")
     text.write("---------------------------------------\n")
-    text.write("Winner: " + str(winner) + "\n")
-   
-
-
-
-
-
+    text.write("Winner:" + str(winner) + "\n........")
